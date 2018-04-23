@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">gerenciamento_de_memoria</string>
+
+
+    <string-array name="tamanho_da_memoria">
+        <item>2048</item>
+        <item>1024</item>
+        <item>512</item>
+    </string-array>
+    <string-array name="tamanho_da_pagina">
+        <item>128</item>
+        <item>64</item>
+        <item>32</item>
+        <item>16</item>
+    </string-array>
+
+
 </resources>
