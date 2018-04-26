@@ -1,0 +1,25 @@
+*tela princiapl:
+
+-criar busca de arquivos;
+-criar janela e função de instruções;
+-função do OK.
+
+*primeira tela do swipe
+
+-criar interface completa;
+-criar fila de processos, ler arquivo e colocar ali conforme pressionar o botao
+com provavelmente uma table;
+-criar log de saida, pode ser um campo de texto;
+-funcao do botao incrementa;
+-funcao botao sair;
+
+*segunda tela do swipe
+
+-cirar toda a interface;
+-modo de tabela para mapeamento da memoria;
+-colocar botoes;
+
+*terceira tela do swipe
+
+-criar toda a interface;
+-contabilidade pode ser feita no simple text;
