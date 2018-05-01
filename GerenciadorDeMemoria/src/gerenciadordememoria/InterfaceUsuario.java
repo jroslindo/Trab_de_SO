@@ -38,7 +38,7 @@ public abstract class InterfaceUsuario implements Initializable{
             FXMLLoader loader = new FXMLLoader(getClass().getResource(caminhoFxml));
             loader.setController(this);            
             Pane elementoPrincipal = loader.load();            
-            this.minhaCena = new Scene( elementoPrincipal, 600, 400);
+            this.minhaCena = new Scene(elementoPrincipal);
         } catch (IOException ex) {
             Logger.getLogger(InterfaceUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }

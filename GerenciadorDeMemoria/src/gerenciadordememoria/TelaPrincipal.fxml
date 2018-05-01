@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="512.0" layoutY="14.0" text="Simulador de Paginação" textAlignment="CENTER">
          <font>
@@ -33,9 +33,9 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TableView fx:id="memoriaID" layoutX="363.0" layoutY="80.0" prefHeight="655.0" prefWidth="452.0">
+      <TableView fx:id="memoriaID" layoutX="363.0" layoutY="80.0" prefHeight="567.0" prefWidth="398.0">
         <columns>
-          <TableColumn fx:id="memoriaIDColumn" prefWidth="451.0" text="Memória" />
+          <TableColumn fx:id="memoriaIDColumn" prefWidth="397.0" text="Memória" />
         </columns>
       </TableView>
       <Button layoutX="22.0" layoutY="624.0" mnemonicParsing="false" text="Auto-Incrementar" />

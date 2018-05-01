@@ -135,12 +135,12 @@ public class TelaPrincipalController extends InterfaceUsuario {
                 if ((numeroPaginasTotal - espacosNaMemoria - numeroRepeticoes) >= 0) {   
                     
                     for (int j = 0; j < numeroRepeticoes; j++) {
-                        Processo CU = new Processo();
-                        CU.setId(filaEntrada.get(i).getId());
-                        CU.setTamanho(filaEntrada.get(i).getTamanho());
-                        CU.setTempoCriacao(filaEntrada.get(i).getTempoCriacao());
-                        CU.setTempoMorte(filaEntrada.get(i).getTempoMorte());
-                        listaObservavel1.add(CU);
+                        Processo temp = new Processo();
+                        temp.setId(filaEntrada.get(i).getId());
+                        temp.setTamanho(filaEntrada.get(i).getTamanho());
+                        temp.setTempoCriacao(filaEntrada.get(i).getTempoCriacao());
+                        temp.setTempoMorte(filaEntrada.get(i).getTempoMorte());
+                        listaObservavel1.add(temp);
                         espacosNaMemoria++;   
                         teste=j;
                     }
