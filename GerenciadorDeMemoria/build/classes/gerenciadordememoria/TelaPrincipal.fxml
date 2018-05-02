@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="512.0" layoutY="14.0" text="Simulador de Paginação" textAlignment="CENTER">
          <font>
@@ -38,8 +38,22 @@
           <TableColumn fx:id="memoriaIDColumn" prefWidth="397.0" text="Memória" />
         </columns>
       </TableView>
-      <Button layoutX="22.0" layoutY="624.0" mnemonicParsing="false" text="Auto-Incrementar" />
+      <Button layoutX="22.0" layoutY="624.0" mnemonicParsing="false" onAction="#buttonAutoIncrementar" text="Auto-Incrementar" />
       <Button layoutX="202.0" layoutY="624.0" mnemonicParsing="false" onAction="#buttonIncrementar" text="Incrementar" />
       <TextArea fx:id="logTextArea" layoutX="14.0" layoutY="357.0" prefHeight="245.0" prefWidth="268.0" />
+      <Label fx:id="labelN" layoutX="773.0" layoutY="85.0" text="Tempo de execução" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="803.0" layoutY="135.0" text="Contabilidade">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelQTD" layoutX="803.0" layoutY="203.0" text="Quantidade de processos" />
+      <Label fx:id="labelProcessos" layoutX="803.0" layoutY="230.0" text="Linhas de pagina" />
+      <Label fx:id="labelSemAguardo" layoutX="803.0" layoutY="256.0" text="Processos sem aguardo" />
+      <Label fx:id="labelAguardo" layoutX="803.0" layoutY="277.0" text="Processos que aguardaram" />
    </children>
 </AnchorPane>

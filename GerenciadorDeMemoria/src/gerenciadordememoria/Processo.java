@@ -23,6 +23,8 @@ public class Processo {
     private int tempoCriacao;
     private int tempoMorte;
     private int tamanho;
+    private boolean aguardou = false;
+    private boolean aguardou2 = false;
 
     /**
      * @return the id
@@ -113,6 +115,34 @@ public class Processo {
         }
 
         return processos;
+    }
+
+    /**
+     * @return the aguardou
+     */
+    public boolean isAguardou() {
+        return aguardou;
+    }
+
+    /**
+     * @param aguardou the aguardou to set
+     */
+    public void setAguardou(boolean aguardou) {
+        this.aguardou = aguardou;
+    }
+
+    /**
+     * @return the aguardou2
+     */
+    public boolean isAguardou2() {
+        return aguardou2;
+    }
+
+    /**
+     * @param aguardou2 the aguardou2 to set
+     */
+    public void setAguardou2(boolean aguardou2) {
+        this.aguardou2 = aguardou2;
     }
     
 
