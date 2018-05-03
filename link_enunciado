@@ -1,1 +1,14 @@
 LINK ENUNCIADO: https://fb.projetointegrador.org/doku.php?id=simulador_paginacao
+
+
+como fazer a contabilidade extra:
+
+1- adicionar um contador de tempo de espera no processo, somar todos eles e depois dividir pelo numero de processos
+
+2- mesma coisa, porem só divide por os processos q esperaram
+
+4- processo > tamnaho da memoria
+
+3- soma de todos os restos das paginas > processo, e mesmo assim ele n pode entrar na memoria
+
+5- Outros elementos.
