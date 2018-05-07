@@ -118,6 +118,27 @@ public class TelaPrincipalController extends InterfaceUsuario {
     @FXML
     private Label labelAguardo;
     
+    @FXML
+    private Label LabelAloca;
+    
+    private int contadorEspera=0;
+    
+    @FXML
+    private Label labelTempoAguardo;
+    
+    private int contadorFragInterno=0;
+    private int restoDeMemoria=0;
+    
+    @FXML
+    private Label LabelFragInterna;
+    
+    private int contadorFragExterno=0;
+    
+    @FXML
+    private Label LabelFragExterna;
+    
+    @FXML
+    private TextArea TextAreaVida;
 
     //JOAO MEXENDO
     public void buttonIncrementar(ActionEvent event) {
@@ -135,10 +156,10 @@ public class TelaPrincipalController extends InterfaceUsuario {
         int teste=0;
 
         Double numeroRepeticoes;
-
+        TextAreaVida.setText(" ");
         for (int j = 0; j < listaObservavel1.size(); j++) {
             listaObservavel1.get(j).setTempoMorte(listaObservavel1.get(j).getTempoMorte() - 1);
-            //System.out.println("ID: " + listaObservavel1.get(j).getId() + "Tempo de morte: " + listaObservavel1.get(j).getTempoMorte());
+            TextAreaVida.setText("ID: " + listaObservavel1.get(j).getId() + "Tempo de vida: " + listaObservavel1.get(j).getTempoMorte()+"\n" + TextAreaVida.getText());
         }
 
         //System.out.println("----------------------------------------------------");
@@ -189,16 +210,37 @@ public class TelaPrincipalController extends InterfaceUsuario {
                         QTDAguardou++;
                         filaEntrada.get(i).setAguardou2(true);
                     }
+                    contadorEspera++;
+                    labelTempoAguardo.setText("Tempo medio de aguardo: " + contadorEspera/QTDAguardou);
                     
-                    System.out.println("MEMORIA CHEIA!!!");
+                    for (int j=0; j<listaObservavel1.size();j++){
+                        if(Integer.parseInt(tamanhoPagina)-listaObservavel1.get(j).getTamanho()>0){
+                            restoDeMemoria+=Integer.parseInt(tamanhoPagina)-listaObservavel1.get(j).getTamanho();
+                        }                            
+                    }
+                    
+                    if(filaEntrada.get(i).getTamanho()<restoDeMemoria){
+                        contadorFragInterno++;
+                    }
+                    restoDeMemoria=0;
+                    if (filaEntrada.get(i).getTamanho()>Integer.parseInt(tamanhoMemoria)){
+                        contadorFragExterno++;
+                        filaEntrada.remove(i);
+                        i--;
+                        size--;
+                    }
+                    //System.out.println("MEMORIA CHEIA!!!");
                     logTextArea.setText("MEMORIA CHEIA!!! \n" + logTextArea.getText());
                     N--;
                 }
             }
         }
         
+        LabelFragExterna.setText("Fragmentação externa: " + contadorFragExterno);
+        LabelFragInterna.setText("Fragmentação interna: "+ contadorFragInterno);
+        LabelAloca.setText("Tempo medio de alocação: "+ tempoDeExecucao/QTDProcesos);
         labelAguardo.setText("Processos que aguardaram: " + QTDAguardou);
-        labelSemAguardo.setText("Processos sem aguardo: " + QTDNaoAguardou);
+        labelSemAguardo.setText("Processos sem aguardou: " + QTDNaoAguardou);
         memoriaIDColumn.setCellValueFactory(new PropertyValueFactory<Processo, Integer>("id"));
         memoriaID.setItems(listaObservavel1);
 
@@ -223,9 +265,10 @@ public class TelaPrincipalController extends InterfaceUsuario {
 
         Double numeroRepeticoes;
 
+        TextAreaVida.setText(" ");
         for (int j = 0; j < listaObservavel1.size(); j++) {
             listaObservavel1.get(j).setTempoMorte(listaObservavel1.get(j).getTempoMorte() - 1);
-            //System.out.println("ID: " + listaObservavel1.get(j).getId() + "Tempo de morte: " + listaObservavel1.get(j).getTempoMorte());
+            TextAreaVida.setText("ID: " + listaObservavel1.get(j).getId() + "Tempo de vida: " + listaObservavel1.get(j).getTempoMorte()+"\n" + TextAreaVida.getText());
         }
 
         //System.out.println("----------------------------------------------------");
@@ -276,6 +319,27 @@ public class TelaPrincipalController extends InterfaceUsuario {
                         QTDAguardou++;
                         filaEntrada.get(i).setAguardou2(true);
                     }
+                    contadorEspera++;
+                    labelTempoAguardo.setText("Tempo medio de aguardo: " + contadorEspera/QTDAguardou);
+                    
+                    for (int j=0; j<listaObservavel1.size();j++){
+                        if(Integer.parseInt(tamanhoPagina)-listaObservavel1.get(j).getTamanho()>0){
+                            restoDeMemoria+=Integer.parseInt(tamanhoPagina)-listaObservavel1.get(j).getTamanho();
+                        }                            
+                    }
+                    
+                    if(filaEntrada.get(i).getTamanho()<restoDeMemoria){
+                        contadorFragInterno++;
+                    }
+                    restoDeMemoria=0;
+                    
+                    if (filaEntrada.get(i).getTamanho()>Integer.parseInt(tamanhoMemoria)){
+                        contadorFragExterno++;
+                        filaEntrada.remove(i);
+                        i--;
+                        size--;
+                    }
+
                     System.out.println("MEMORIA CHEIA!!!");
                     logTextArea.setText("MEMORIA CHEIA!!! \n" + logTextArea.getText());
                     N--;
@@ -283,6 +347,9 @@ public class TelaPrincipalController extends InterfaceUsuario {
             }
         }
         
+        LabelFragExterna.setText("Fragmentação externa: " + contadorFragExterno);
+        LabelFragInterna.setText("Fragmentação interna: "+ contadorFragInterno);
+        LabelAloca.setText("Tempo medio de alocação: "+ tempoDeExecucao/QTDProcesos);
         labelAguardo.setText("Processos que aguardaram: " + QTDAguardou);
         labelSemAguardo.setText("Processos sem aguardo: " + QTDNaoAguardou);
         memoriaIDColumn.setCellValueFactory(new PropertyValueFactory<Processo, Integer>("id"));

@@ -40,7 +40,7 @@
       </TableView>
       <Button layoutX="22.0" layoutY="624.0" mnemonicParsing="false" onAction="#buttonAutoIncrementar" text="Auto-Incrementar" />
       <Button layoutX="202.0" layoutY="624.0" mnemonicParsing="false" onAction="#buttonIncrementar" text="Incrementar" />
-      <TextArea fx:id="logTextArea" layoutX="14.0" layoutY="357.0" prefHeight="245.0" prefWidth="268.0" />
+      <TextArea fx:id="logTextArea" editable="false" layoutX="14.0" layoutY="357.0" prefHeight="245.0" prefWidth="268.0" />
       <Label fx:id="labelN" layoutX="773.0" layoutY="85.0" text="Tempo de execução" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="17.0" />
@@ -51,9 +51,20 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <Label fx:id="labelQTD" layoutX="803.0" layoutY="203.0" text="Quantidade de processos" />
-      <Label fx:id="labelProcessos" layoutX="803.0" layoutY="230.0" text="Linhas de pagina" />
-      <Label fx:id="labelSemAguardo" layoutX="803.0" layoutY="256.0" text="Processos sem aguardo" />
-      <Label fx:id="labelAguardo" layoutX="803.0" layoutY="277.0" text="Processos que aguardaram" />
+      <Label fx:id="labelQTD" layoutX="806.0" layoutY="159.0" text="Quantidade de processos" />
+      <Label fx:id="labelProcessos" layoutX="807.0" layoutY="175.0" text="Linhas de pagina" />
+      <Label fx:id="labelSemAguardo" layoutX="806.0" layoutY="191.0" text="Processos sem aguardo" />
+      <Label fx:id="labelAguardo" layoutX="807.0" layoutY="207.0" text="Processos que aguardaram" />
+      <Label layoutX="802.0" layoutY="244.0" text="Contabilidade extra">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="LabelAloca" layoutX="803.0" layoutY="277.0" text="Tempo medio de alocação: " />
+      <Label fx:id="labelTempoAguardo" layoutX="803.0" layoutY="293.0" text="Tempo medio de aguardo:" />
+      <Label fx:id="LabelFragInterna" layoutX="803.0" layoutY="309.0" text="Fragmentação interna:" />
+      <Label fx:id="LabelFragExterna" layoutX="803.0" layoutY="325.0" text="Fragmentação externa:" />
+      <TextArea fx:id="TextAreaVida" editable="false" layoutX="794.0" layoutY="437.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="794.0" layoutY="412.0" text="LOG TEMPO DE VIDA" />
    </children>
 </AnchorPane>
